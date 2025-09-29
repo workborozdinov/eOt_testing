@@ -6,7 +6,7 @@ import { LocationService } from "../../services/LocationService";
 import { SystemType } from "../../services/SystemService";
 import { Colliders } from "../../utils/Colliders";
 import { inject } from "../../utils/DIUtils";
-import { System } from "../Core/System";
+import { System } from "../core/System";
 
 export default class CollisionSystem extends System {
     @inject(() => LocationService) private readonly _locationService: LocationService;

@@ -1,11 +1,11 @@
 import { _decorator, Component } from 'cc';
 import { inject, injectable } from '../utils/DIUtils';
 import { Service } from '../utils/DIUtils';
-import MovementSystem from '../ECS/Systems/MovementSystem';
-import { System } from '../ECS/Core/System';
-import CollisionSystem from '../ECS/Systems/CollisionSystem';
+import MovementSystem from '../ECS/systems/MovementSystem';
+import { System } from '../ECS/core/System';
+import CollisionSystem from '../ECS/systems/CollisionSystem';
 import { LocationService } from './LocationService';
-import GenerationCollectablesSystem from '../ECS/Systems/GenerationCollectablesSystem';
+import GenerationCollectablesSystem from '../ECS/systems/GenerationCollectablesSystem';
 const { ccclass } = _decorator;
 
 export enum SystemType {

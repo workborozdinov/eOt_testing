@@ -1,5 +1,5 @@
 import { CollectableType } from "../model/enums/CollectableType";
-import { TrajectoriesType } from "../model/enums/TrajectoriesType";
+import { TrajectoryType } from "../services/enums/TrajectoryType";
 import { WorldItemType } from "../model/enums/WorldItemType";
 import { OBB, rect, size, vec2 } from "../utils/Utils";
 
@@ -39,7 +39,7 @@ export interface ICatcherData extends IPropData {
 export interface IZoneData extends IPropData { }
 
 export interface ITrajectoryData {
-    type: TrajectoriesType;
+    type: TrajectoryType;
     velocity: number;
     direction: vec2;
     initVelocity: number;

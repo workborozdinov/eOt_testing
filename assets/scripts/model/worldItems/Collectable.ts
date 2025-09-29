@@ -4,7 +4,7 @@ import { CollectableType } from "../enums/CollectableType";
 import { Catcher } from "./Catcher";
 import { Prop } from "./Prop";
 import { DestroyZone } from "./DestroyZone";
-import { TrajectoriesType } from "../enums/TrajectoriesType";
+import { TrajectoryType } from "../../services/enums/TrajectoryType";
 
 export class Collectable extends Prop {
     get collectableType(): CollectableType { return this._collectableType; }
@@ -21,11 +21,6 @@ export class Collectable extends Prop {
 
     get time() { return this._time }
     protected _time: number = 0;
-    
-    get isCatch(): boolean { return this._isCatch; }
-    protected _isCatch: boolean = false;
-
-    protected _targetCather: Catcher;
 
     applyData(data: ICollectableData): void {
         super.applyData(data);
@@ -48,7 +43,7 @@ export class Collectable extends Prop {
 
     changeMovementTime(dt: number) {
         switch (this._trajectoryData.type) {
-            case TrajectoriesType.ACCELERATE: {
+            case TrajectoryType.ACCELERATE: {
                 this._time += dt;
                 this._trajectoryData.velocity = this._trajectoryData.initVelocity + (this._trajectoryData as AccelerateTrajectoriesData).acceleration * this._time;
                 break;

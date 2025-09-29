@@ -7,7 +7,7 @@ import { MouseService } from "../../services/MouseService";
 import { SystemType } from "../../services/SystemService";
 import { TrajectoryService } from "../../services/TrajectoryService";
 import { inject } from "../../utils/DIUtils";
-import { System } from "../Core/System";
+import { System } from "../core/System";
 import WorldViewService from "../../view/WorldViewService";
 
 export default class MovementSystem extends System {

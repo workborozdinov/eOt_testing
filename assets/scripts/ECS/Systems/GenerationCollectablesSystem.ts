@@ -5,7 +5,7 @@ import { SystemType } from "../../services/SystemService";
 import { TrajectoryService } from "../../services/TrajectoryService";
 import { inject } from "../../utils/DIUtils";
 import { getRandomInRange, vec2 } from "../../utils/Utils";
-import { System } from "../Core/System";
+import { System } from "../core/System";
 
 export default class GenerationCollectablesSystem extends System {
     @inject(() => LocationService) private readonly _locationService: LocationService;

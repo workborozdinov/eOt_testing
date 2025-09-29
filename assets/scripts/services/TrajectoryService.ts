@@ -1,7 +1,7 @@
 import { _decorator } from 'cc';
 import { injectable } from '../utils/DIUtils';
 import { Service } from '../utils/DIUtils';
-import { TrajectoriesType } from '../model/enums/TrajectoriesType';
+import { TrajectoryType } from './enums/TrajectoryType';
 import { AccelerateTrajectoriesData, ILinearTrajectoryData, ITrajectoryData, IZigZagTrajectoriesData } from '../interfaces/Data';
 import { getRandomInRange, getRandomStringEnumValue, vec2 } from '../utils/Utils';
 
@@ -24,9 +24,9 @@ const DECIMALS_RANDOM_FREQUENCY = 1;
 export class TrajectoryService implements Service {        
     getPosition(trajectoryData: ITrajectoryData, startPosition: vec2, time: number): vec2 {
         switch (trajectoryData.type) {
-            case TrajectoriesType.LINEAR: return this._calculateLinearPosition(trajectoryData as ILinearTrajectoryData, startPosition, time);
-            case TrajectoriesType.ACCELERATE: return this._calculateAcceleratePosition(trajectoryData as AccelerateTrajectoriesData, startPosition, time);
-            case TrajectoriesType.ZIG_ZAG: return this._calculateZigZigPosition(trajectoryData as IZigZagTrajectoriesData,  startPosition, time);
+            case TrajectoryType.LINEAR: return this._calculateLinearPosition(trajectoryData as ILinearTrajectoryData, startPosition, time);
+            case TrajectoryType.ACCELERATE: return this._calculateAcceleratePosition(trajectoryData as AccelerateTrajectoriesData, startPosition, time);
+            case TrajectoryType.ZIG_ZAG: return this._calculateZigZigPosition(trajectoryData as IZigZagTrajectoriesData,  startPosition, time);
             default: return null;
         }
     }
@@ -61,22 +61,22 @@ export class TrajectoryService implements Service {
     }
 
     getRandomTrajectory(): ITrajectoryData {
-        const trajectoryType = getRandomStringEnumValue(TrajectoriesType);
+        const trajectoryType = getRandomStringEnumValue(TrajectoryType);
         
         switch (trajectoryType) {
-            case TrajectoriesType.LINEAR: {
+            case TrajectoryType.LINEAR: {
                 return {
-                    type: TrajectoriesType.LINEAR,
+                    type: TrajectoryType.LINEAR,
                     direction: this._getRandomDirection(),
                     velocity: this._getRandomVelocity(),
                 } as ILinearTrajectoryData;
             }
             
-            case TrajectoriesType.ACCELERATE: {
+            case TrajectoryType.ACCELERATE: {
                 const velocity = this._getRandomVelocity();
 
                 return {
-                    type: TrajectoriesType.ACCELERATE,
+                    type: TrajectoryType.ACCELERATE,
                     direction: this._getRandomDirection(),
                     acceleration: this._getRandomAcceleration(),
                     velocity: velocity,
@@ -84,9 +84,9 @@ export class TrajectoryService implements Service {
                 } as AccelerateTrajectoriesData;
             }
 
-            case TrajectoriesType.ZIG_ZAG: {
+            case TrajectoryType.ZIG_ZAG: {
                 return {
-                    type: TrajectoriesType.ZIG_ZAG,
+                    type: TrajectoryType.ZIG_ZAG,
                     direction: this._getRandomDirection(),
                     velocity: this._getRandomVelocity(),
                     frequency: this._getRandomFrequency(),
