@@ -1,0 +1,33 @@
+{
+  "__version__": "1.0.6",
+  "general": {
+    "designResolution": {
+      "width": 960,
+      "height": 540,
+      "fitWidth": false,
+      "fitHeight": true
+    }
+  },
+  "script": {
+    "exportsConditions": [
+      "browser",
+      " module"
+    ]
+  },
+  "layer": [
+    {
+      "name": "HUD",
+      "value": 524288
+    }
+  ],
+  "sorting-layer": {
+    "layers": [
+      {
+        "id": 0,
+        "name": "default",
+        "value": 0
+      }
+    ],
+    "increaseId": 2
+  }
+}

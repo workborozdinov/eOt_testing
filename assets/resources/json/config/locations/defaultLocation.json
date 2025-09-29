@@ -1,0 +1,35 @@
+{
+    "playtime": 90,
+    "health": 3,
+    "generationCollectablesDataPath": "config/generation/defaultGeneration",
+    "worldItems": [
+        {
+            "prefabPath": "backgrounds/DefaultBackground",
+            "type": "dc",
+            "worldPosition": { "x": 0, "y": 0 },
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 255 
+        },
+        {
+            "prefabPath": "catchers/Bucket",
+            "type": "ct",
+            "worldPosition": { "x": 0, "y": -220 },
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 255,
+            "movementVector": { "x": 1, "y": 0 },
+            "obb": { "center": { "x": 0, "y": 30 }, "axleShafts": { "x": 50, "y": 15 }, "angle": 0 },
+            "size": { "width": 120, "height": 98 }
+        },
+        {
+            "prefabPath": "zones/DestroyZone",
+            "type": "dzn",
+            "worldPosition": { "x": 0, "y": -370 },
+            "scale": 1,
+            "rotation": 0,
+            "opacity": 255,
+            "obb": { "center": { "x": 0, "y": 0 }, "axleShafts": { "x": 960, "y": 50 }, "angle": 0 } 
+        }
+    ]
+}

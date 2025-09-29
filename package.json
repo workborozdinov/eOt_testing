@@ -1,0 +1,11 @@
+{
+  "name": "eOt_testingECS",
+  "uuid": "b50083c8-90f4-49ed-b5f8-5207335efb4d",
+  "creator": {
+    "version": "3.8.7"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "typescript": "^4.9.0"
+  }
+}
